@@ -1,4 +1,4 @@
-# KV-Cache A/B-Test — Dokumentation zu `kv_ab_test.sh`
+# KV-Cache A/B-Test — Dokumentation zu `kiwi-test.sh`
 
 ## TL;DR
 
