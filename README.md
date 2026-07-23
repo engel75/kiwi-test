@@ -86,7 +86,7 @@ Alle Parameter werden als Umgebungsvariablen übergeben:
 | `SEED` / `SEED_MIN` / `SEED_MAX` | `42` | Seed-Bereich (inklusiv); ohne Angabe läuft genau ein Seed |
 | `REPEATS` | `1` | Wiederholungen pro Test und Seed (Stabilitätsmessung) |
 | `MAX_TOKENS` | `4096` | Antwort-Budget pro Request (inkl. Thinking, je nach Server) |
-| `CSV_FILE` | `kv_ab_results_<Zeitstempel>.csv` | Ergebnisdatei; existiert sie schon, wird angehängt |
+| `CSV_FILE` | `kiwi_results_<Zeitstempel>.csv` | Ergebnisdatei; existiert sie schon, wird angehängt |
 
 Beispiel — Qualitätsvergleich mit 10 Seeds:
 
@@ -94,7 +94,7 @@ Beispiel — Qualitätsvergleich mit 10 Seeds:
 ENDPOINT=https://gateway.example.com/v1/chat/completions \
 API_KEY=$KEY MODEL=glm-5.2 \
 CONTEXT_TOKENS=120000 SEED_MIN=42 SEED_MAX=51 \
-CSV_FILE=vergleich_120k.csv ./kv_ab_test.sh
+CSV_FILE=vergleich_120k.csv ./kiwi-test.sh
 ```
 
 Denselben Aufruf anschließend gegen die jeweils andere Konfiguration wiederholen — bei gleicher `CSV_FILE` landen alle Läufe in einer Datei und lassen sich nach `model`/`endpoint` gruppieren.
